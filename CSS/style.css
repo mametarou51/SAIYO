@@ -1,9 +1,6 @@
 * {
   color: #000;
-<<<<<<< HEAD
-=======
   box-sizing: border-box;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 
 a {
@@ -19,11 +16,7 @@ li {
 .container {
   max-width: 1100px;
   margin-inline: auto;
-<<<<<<< HEAD
-  padding-inline: 16px;
-=======
   padding-inline: 4%;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 
 header {
@@ -32,52 +25,26 @@ header {
   position: fixed;
   top: 0;
   z-index: 100;
-<<<<<<< HEAD
-=======
   display: flex;
   justify-content: space-between;
   padding-top: 8px;
   padding-inline: 8px;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 header .text {
   font-size: 8px;
   font-family: "Yu Gothic", sans-serif;
-<<<<<<< HEAD
-  padding-top: 8px;
-  padding-left: 8px;
-}
-header .site-title {
-=======
 }
 header .site-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-<<<<<<< HEAD
-  display: inline-block;
-  display: grid;
-  grid-row: 2;
-  font-size: 48px;
-  font-family: "Boxing", sans-serif;
-=======
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 header .sub-title {
   font-size: 16px;
   font-family: "Yu Gothic", sans-serif;
-<<<<<<< HEAD
-  margin-inline: auto;
-  grid-row: 1;
-}
-
-main {
-  margin-top: 64px;
-=======
   display: block;
   text-align: center;
 }
@@ -92,7 +59,6 @@ header .total {
 
 main {
   margin-top: 96px;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 main #LP {
   margin-bottom: 64px;
@@ -185,8 +151,6 @@ main #contact .sub-title {
 main #contact .sub-title::after {
   position: absolute;
   content: "";
-<<<<<<< HEAD
-=======
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -195,13 +159,10 @@ main #contact .sub-title::after {
   border-style: solid;
   border-width: 0 6px 6px 0;
   border-color: transparent #000 transparent transparent;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }
 main #contact .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
-<<<<<<< HEAD
-=======
   position: relative;
   padding-block: 8px;
   max-width: 300px;
@@ -282,5 +243,4 @@ footer p:last-child {
   font-size: 148px;
   color: #fff;
   font-family: "Boxing", sans-serif;
->>>>>>> dbad9b9938a7704c9cce86c25a7c9e82f6ad85c3
 }/*# sourceMappingURL=style.css.map */
