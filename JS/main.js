@@ -3,7 +3,15 @@ $(document).ready(function () {
     let totalFavoriteCount = parseInt(localStorage.getItem('totalFavoriteCount')) || 0;
     $('.total').text(`♥ サイコー！ ${totalFavoriteCount}`);
 
-
+    $('.slick-card').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: false,
+    });
 
 
     $('.number').text('0');

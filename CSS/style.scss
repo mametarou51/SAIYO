@@ -68,6 +68,11 @@ header {
         height: 40px;
         font-weight: bold;
     }
+
+    .mainvisual,
+    .side {
+        display: none;
+    }
 }
 
 main {
@@ -77,6 +82,19 @@ main {
         margin-bottom: 64px;
         padding-bottom: 64px;
         border-bottom: 1px solid $secondary-color;
+
+        .sec-title {
+            font-size: 48px;
+            font-family: $base-font-family;
+            display: none;
+        }
+
+        .text {
+            font-size: $base-font-size;
+            font-family: $secondary-font-family;
+            margin-bottom: 16px;
+            display: none;
+        }
 
         .grid {
             display: grid;
@@ -159,6 +177,88 @@ main {
 
             .number {
                 font-size: $base-font-size;
+            }
+        }
+
+        .btn {
+            font-size: $base-font-size;
+            font-family: $secondary-font-family;
+            border: 1px solid $secondary-color;
+            font-weight: 550;
+            padding: 8px 16px;
+            margin-inline: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s;
+            display: none;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $main-color;
+            }
+        }
+    }
+
+    #column {
+        .sec-title {
+            font-size: 48px;
+            font-family: $base-font-family;
+            display: none;
+        }
+
+        .text {
+            font-size: $base-font-size;
+            font-family: $secondary-font-family;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .slick-card {
+            border: 1px solid $secondary-color;
+            border-radius: 7px;
+            padding: 16px;
+            text-align: right;
+            display: none;
+
+            img {
+                width: 100%;
+                height: 150px;
+                border-radius: 0;
+            }
+
+            .text {
+                font-weight: bold;
+                padding-top: 16px;
+                padding-left: 8px;
+                font-family: $secondary-font-family;
+                margin-bottom: 80px;
+                text-align: left;
+            }
+
+            .btn {
+                text-align: right;
+                font-weight: bold;
+                border: 1px solid $secondary-color;
+                border-radius: 50%;
+                padding: 8px;
+            }
+        }
+
+        .btn {
+            font-size: $base-font-size;
+            font-family: $secondary-font-family;
+            border: 1px solid $secondary-color;
+            font-weight: 550;
+            padding: 8px 16px;
+            margin-inline: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s;
+            display: none;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $main-color;
             }
         }
     }
@@ -494,5 +594,63 @@ footer {
         font-size: 148px;
         color: #fff;
         font-family: $base-font-family;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        .mainvisual {
+            display: block;
+        }
+
+        .side {
+            display: block;
+            text-orientation: sideways;
+        }
+    }
+
+    main {
+        #LP {
+            .sec-title {
+                display: block;
+            }
+
+            .text {
+                display: block;
+            }
+
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .btn {
+                display: none;
+            }
+        }
+
+        #column {
+            .sec-title {
+                display: block;
+            }
+
+            .text {
+                display: block;
+            }
+
+            .slick-card {
+                display: block;
+            }
+
+            .btn {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        .grid {
+            width: 100%;
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }

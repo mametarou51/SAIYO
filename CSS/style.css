@@ -57,6 +57,10 @@ header .total {
   height: 40px;
   font-weight: bold;
 }
+header .mainvisual,
+header .side {
+  display: none;
+}
 
 main {
   margin-top: 96px;
@@ -65,6 +69,17 @@ main #LP {
   margin-bottom: 64px;
   padding-bottom: 64px;
   border-bottom: 1px solid #000;
+}
+main #LP .sec-title {
+  font-size: 48px;
+  font-family: "Boxing", sans-serif;
+  display: none;
+}
+main #LP .text {
+  font-size: 16px;
+  font-family: "Yu Gothic", sans-serif;
+  margin-bottom: 16px;
+  display: none;
 }
 main #LP .grid {
   display: grid;
@@ -124,6 +139,76 @@ main #LP .flex .favorite-count {
 }
 main #LP .flex .number {
   font-size: 16px;
+}
+main #LP .btn {
+  font-size: 16px;
+  font-family: "Yu Gothic", sans-serif;
+  border: 1px solid #000;
+  font-weight: 550;
+  padding: 8px 16px;
+  margin-inline: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: none;
+}
+main #LP .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+main #column .sec-title {
+  font-size: 48px;
+  font-family: "Boxing", sans-serif;
+  display: none;
+}
+main #column .text {
+  font-size: 16px;
+  font-family: "Yu Gothic", sans-serif;
+  margin-bottom: 16px;
+  display: none;
+}
+main #column .slick-card {
+  border: 1px solid #000;
+  border-radius: 7px;
+  padding: 16px;
+  text-align: right;
+  display: none;
+}
+main #column .slick-card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 0;
+}
+main #column .slick-card .text {
+  font-weight: bold;
+  padding-top: 16px;
+  padding-left: 8px;
+  font-family: "Yu Gothic", sans-serif;
+  margin-bottom: 80px;
+  text-align: left;
+}
+main #column .slick-card .btn {
+  text-align: right;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 8px;
+}
+main #column .btn {
+  font-size: 16px;
+  font-family: "Yu Gothic", sans-serif;
+  border: 1px solid #000;
+  font-weight: 550;
+  padding: 8px 16px;
+  margin-inline: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: none;
+}
+main #column .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 main #about {
   text-align: center;
@@ -410,4 +495,42 @@ footer p:last-child {
   font-size: 148px;
   color: #fff;
   font-family: "Boxing", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  header .mainvisual {
+    display: block;
+  }
+  header .side {
+    display: block;
+    text-orientation: sideways;
+  }
+  main #LP .sec-title {
+    display: block;
+  }
+  main #LP .text {
+    display: block;
+  }
+  main #LP .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  main #LP .btn {
+    display: none;
+  }
+  main #column .sec-title {
+    display: block;
+  }
+  main #column .text {
+    display: block;
+  }
+  main #column .slick-card {
+    display: block;
+  }
+  main #column .btn {
+    display: none;
+  }
+  footer .grid {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=style.css.map */
