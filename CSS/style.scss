@@ -600,19 +600,19 @@ footer {
 @media screen and (max-width: 768px) {
     header {
         .mainvisual {
-            display: block;
+            display: inline-block;
             width: 100%;
             object-fit: cover;
         }
 
         .side {
-            display: block;
+            display: inline-block;
             text-orientation: sideways;
         }
 
         .site-title {
             top: 130%;
-            display: block;
+            display: inline-block;
         }
     }
 
