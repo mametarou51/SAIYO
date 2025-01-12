@@ -601,11 +601,18 @@ footer {
     header {
         .mainvisual {
             display: block;
+            width: 100%;
+            object-fit: cover;
         }
 
         .side {
             display: block;
             text-orientation: sideways;
+        }
+
+        .site-title {
+            top: 130%;
+            display: block;
         }
     }
 

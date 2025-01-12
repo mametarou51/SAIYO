@@ -500,10 +500,17 @@ footer p:last-child {
 @media screen and (max-width: 768px) {
   header .mainvisual {
     display: block;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   header .side {
     display: block;
     text-orientation: sideways;
+  }
+  header .site-title {
+    top: 130%;
+    display: block;
   }
   main #LP .sec-title {
     display: block;
