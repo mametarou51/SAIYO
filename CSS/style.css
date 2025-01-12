@@ -60,6 +60,7 @@ header .total {
 header .mainvisual,
 header .side {
   display: none;
+  position: absolute;
 }
 
 main {
