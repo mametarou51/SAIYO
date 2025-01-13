@@ -28,17 +28,18 @@ header {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  padding-top: 8px;
-  padding-inline: 8px;
+  padding-top: 4%;
+  padding-inline: 4%;
 }
 header .text {
   font-size: 8px;
   font-family: "Yu Gothic", sans-serif;
 }
 header .site-title {
-  font-size: 48px;
+  font-size: calc(48px + 0.5vw);
   font-family: "Boxing", sans-serif;
   position: absolute;
+  white-space: nowrap;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -57,14 +58,28 @@ header .total {
   height: 40px;
   font-weight: bold;
 }
-header .mainvisual,
 header .side {
   display: none;
   position: absolute;
+  transform: rotate(90deg);
+  top: 50vw;
+  left: -10px;
+  flex: 1;
+  margin-inline: auto;
 }
 
 main {
   margin-top: 96px;
+}
+main #mainvisual {
+  display: none;
+  margin-bottom: 64px;
+  text-align: center;
+}
+main #mainvisual img {
+  border-radius: 5%;
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 main #LP {
   margin-bottom: 64px;
@@ -81,6 +96,7 @@ main #LP .text {
   font-family: "Yu Gothic", sans-serif;
   margin-bottom: 16px;
   display: none;
+  text-align: center;
 }
 main #LP .grid {
   display: grid;
@@ -157,10 +173,17 @@ main #LP .btn:hover {
   background-color: #000;
   color: #fff;
 }
+main #column {
+  text-align: center;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 24px;
+}
 main #column .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
   display: none;
+  text-align: center;
 }
 main #column .text {
   font-size: 16px;
@@ -174,6 +197,7 @@ main #column .slick-card {
   padding: 16px;
   text-align: right;
   display: none;
+  margin-inline: 8px;
 }
 main #column .slick-card img {
   width: 100%;
@@ -195,6 +219,9 @@ main #column .slick-card .btn {
   border-radius: 50%;
   padding: 8px;
 }
+main #column .slick-list {
+  overflow: hidden;
+}
 main #column .btn {
   font-size: 16px;
   font-family: "Yu Gothic", sans-serif;
@@ -202,6 +229,7 @@ main #column .btn {
   font-weight: 550;
   padding: 8px 16px;
   margin-inline: auto;
+  margin-top: 24px;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s;
@@ -211,9 +239,16 @@ main #column .btn:hover {
   background-color: #000;
   color: #fff;
 }
+main #column .sub-title {
+  font-size: 8px;
+  font-family: "Yu Gothic", sans-serif;
+  text-align: center;
+  margin-bottom: 16px;
+}
 main #about {
   text-align: center;
   margin-bottom: 64px;
+  font-weight: 550;
 }
 main #about .sec-title {
   font-size: 48px;
@@ -238,9 +273,10 @@ main #about .btn {
   font-weight: 550;
   padding: 8px 16px;
   margin-inline: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.5s;
+  white-space: nowrap;
 }
 main #about .btn:hover {
   background-color: #000;
@@ -499,6 +535,10 @@ footer p:last-child {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    position: relative;
+    padding-inline: 6%;
+  }
   header .mainvisual {
     display: inline-block;
     width: 100%;
@@ -507,11 +547,26 @@ footer p:last-child {
   }
   header .side {
     display: inline-block;
-    text-orientation: sideways;
+    position: fixed;
   }
   header .site-title {
-    top: 130%;
+    top: 260%;
     display: inline-block;
+    font-size: calc(48px + 3vw);
+  }
+  header .text {
+    font-size: 3.3333333333vw;
+    font-weight: 550;
+  }
+  header .total {
+    transform: scale(1.2);
+    max-width: 200px;
+  }
+  main {
+    margin-top: 112px;
+  }
+  main #mainvisual {
+    display: block;
   }
   main #LP .sec-title {
     display: block;
@@ -533,12 +588,68 @@ footer p:last-child {
   }
   main #column .slick-card {
     display: block;
+    border: 1.5px solid #000;
+  }
+  main #column .slick-card .text {
+    margin-bottom: 16px;
   }
   main #column .btn {
-    display: none;
+    display: inline-block;
   }
   footer .grid {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .container {
+    padding-inline: 6%;
+  }
+}
+@media screen and (max-width: 320px) {
+  header .site-title {
+    top: 196%;
+    font-size: calc(32px + 1vw);
+  }
+  header .sub-title {
+    font-size: 8px;
+  }
+  header .text {
+    font-size: 3.3333333333vw;
+    font-weight: 550;
+  }
+  header .total {
+    transform: scale(0.8);
+    max-width: 200px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    height: 28px;
+  }
+  header .side {
+    font-size: 10px;
+    top: 80vw;
+  }
+  main {
+    margin-top: 64px;
+  }
+  main #LP .sec-title {
+    font-size: calc(32px + 1vw);
+  }
+  main #LP .text {
+    font-size: 8px;
+  }
+  main #column .sec-title {
+    font-size: calc(32px + 1vw);
+  }
+  main #column .sub-title {
+    font-size: 8px;
+  }
+  main #about .sub-title {
+    font-size: 12px;
+  }
+  footer .grid {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container {
+    padding-inline: 6%;
   }
 }/*# sourceMappingURL=style.css.map */

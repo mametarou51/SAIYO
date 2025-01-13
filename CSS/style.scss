@@ -36,8 +36,8 @@ header {
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    padding-top: 8px;
-    padding-inline: 8px;
+    padding-top: 4%;
+    padding-inline: 4%;
 
     .text {
         font-size: $secondary-font-size;
@@ -45,9 +45,10 @@ header {
     }
 
     .site-title {
-        font-size: 48px;
+        font-size: calc(48px + 0.5vw);
         font-family: $base-font-family;
         position: absolute;
+        white-space: nowrap;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -69,15 +70,30 @@ header {
         font-weight: bold;
     }
 
-    .mainvisual,
     .side {
         display: none;
         position: absolute;
-    }
+        transform: rotate(90deg);
+        top: calc(100vw/2);
+        left: -10px;
+        flex: 1;
+        margin-inline: auto;
+        }
 }
 
 main {
     margin-top: 96px;
+
+    #mainvisual {
+        display: none;
+        margin-bottom: 64px;
+        text-align: center;
+        img {
+            border-radius: 5%;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+        }
+    }
 
     #LP {
         margin-bottom: 64px;
@@ -95,6 +111,7 @@ main {
             font-family: $secondary-font-family;
             margin-bottom: 16px;
             display: none;
+            text-align: center;
         }
 
         .grid {
@@ -201,10 +218,16 @@ main {
     }
 
     #column {
+        text-align: center;
+        padding-bottom: 64px;
+        border-bottom: 1px solid $secondary-color;
+        margin-bottom: 24px;
+
         .sec-title {
             font-size: 48px;
             font-family: $base-font-family;
             display: none;
+            text-align: center;
         }
 
         .text {
@@ -220,6 +243,7 @@ main {
             padding: 16px;
             text-align: right;
             display: none;
+            margin-inline: 8px;
 
             img {
                 width: 100%;
@@ -245,6 +269,10 @@ main {
             }
         }
 
+        .slick-list {
+            overflow: hidden;
+        }
+
         .btn {
             font-size: $base-font-size;
             font-family: $secondary-font-family;
@@ -252,6 +280,7 @@ main {
             font-weight: 550;
             padding: 8px 16px;
             margin-inline: auto;
+            margin-top: 24px;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.5s;
@@ -262,11 +291,18 @@ main {
                 color: $main-color;
             }
         }
+        .sub-title {
+            font-size: $secondary-font-size;
+            font-family: $secondary-font-family;
+            text-align: center;
+            margin-bottom: 16px;
+        }
     }
 
     #about {
         text-align: center;
         margin-bottom: 64px;
+        font-weight: 550;
 
         .sec-title {
             font-size: 48px;
@@ -294,9 +330,10 @@ main {
             font-weight: 550;
             padding: 8px 16px;
             margin-inline: auto;
-            border-radius: 10px;
+            border-radius: 20px;
             cursor: pointer;
             transition: all 0.5s;
+            white-space: nowrap;
 
             &:hover {
                 background-color: $secondary-color;
@@ -600,6 +637,8 @@ footer {
 
 @media screen and (max-width: 768px) {
     header {
+        position: relative;
+        padding-inline: 6%;
         .mainvisual {
             display: inline-block;
             width: 100%;
@@ -608,16 +647,31 @@ footer {
 
         .side {
             display: inline-block;
-            text-orientation: sideways;
+            position: fixed;
         }
 
         .site-title {
-            top: 130%;
+            top: 260%;
             display: inline-block;
+            font-size: calc(48px + 3vw);
+        }
+
+        .text {
+            font-size: calc(30vw/9);
+            font-weight: 550;
+        }
+
+        .total {
+            transform: scale(1.2);
+            max-width: 200px;
         }
     }
 
     main {
+        margin-top: 112px;
+        #mainvisual {
+            display: block;
+        }
         #LP {
             .sec-title {
                 display: block;
@@ -647,10 +701,14 @@ footer {
 
             .slick-card {
                 display: block;
+                border: 1.5px solid $secondary-color;
+                .text {
+                    margin-bottom: 16px;
+                }
             }
 
             .btn {
-                display: none;
+                display: inline-block;
             }
         }
     }
@@ -661,4 +719,76 @@ footer {
             grid-template-columns: repeat(1, 1fr);
         }
     }
+
+    .container {
+        padding-inline: 6%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        .site-title {
+            top: 196%;
+            font-size: calc(32px + 1vw);
+        }
+
+        .sub-title {
+            font-size: 8px;
+        }
+
+        .text {
+            font-size: calc(30vw/9);
+            font-weight: 550;
+        }
+
+        .total {
+            transform: scale(0.8);
+            max-width: 200px;
+            white-space: nowrap;
+            padding: 8px 12px;
+            height: 28px;
+        }
+
+        .side {
+            font-size: 10px;
+            top: 80vw;
+        }
+    }
+
+    main {
+        margin-top: 64px;
+        #LP {
+            .sec-title {
+                font-size: calc(32px + 1vw);
+            }
+            .text {
+                font-size: 8px;
+            }
+        }
+        #column {
+            .sec-title {
+                font-size: calc(32px + 1vw);
+            }
+            .sub-title {
+                font-size: 8px;
+            }
+        }
+        #about {
+            .sub-title {
+                font-size: 12px;
+            }
+        }
+    }
+
+    footer {
+        .grid {
+            width: 100%;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .container {
+        padding-inline: 6%;
+    }
+    
 }
