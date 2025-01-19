@@ -635,8 +635,9 @@ main {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0%;
-            width: calc(1100px - 8%);
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100vw - 8%);
             height: 1px;
             background-color: #000;
         }
@@ -949,12 +950,30 @@ footer {
 
         #column-list {
             margin-top: 120px;
+
             .grid {
                 grid-template-columns: repeat(1, 1fr);
             }
 
+            .card {
+                .text {
+                    margin-bottom: 24px;
+                }
+                &:nth-child(3n+2) {
+                    background-color: #fff;
+                    color: $secondary-color;
+                    .text {
+                        color: $secondary-color;
+                    }
+    
+                    .btn {
+                        border: 1px solid $secondary-color;
+                    }
+                }
+            }
+
             img {
-                height: 200px;
+                height: 250px;
             }
         }
     }
@@ -1046,6 +1065,12 @@ footer {
 
         #article {
             margin-top: 232px;
+        }
+
+        #column-list {
+            img {
+                height: 150px;
+            }
         }
     }
 

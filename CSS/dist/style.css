@@ -63,7 +63,7 @@ header .side {
   display: none;
   position: absolute;
   transform: rotate(90deg);
-  top: 50vw;
+  top: calc(100vw/2);
   left: -2%;
   right: 91%;
   flex: 1;
@@ -119,8 +119,7 @@ main #LP .grid li a {
 main #LP .grid li img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5%;
 }
 main #LP .grid li:nth-child(8n), main #LP .grid li:nth-child(8n+1), main #LP .grid li:nth-child(8n+3), main #LP .grid li:nth-child(8n+6) {
@@ -403,8 +402,7 @@ main #article .text p span {
 main #article img {
   width: 100%;
   height: 420px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 24px;
   border-radius: 7px;
 }
@@ -542,8 +540,7 @@ main #column-list .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 24px;
-  -moz-column-gap: 12px;
-       column-gap: 12px;
+  column-gap: 12px;
 }
 main #column-list .card {
   border: 1px solid #000;
@@ -634,7 +631,7 @@ footer .grid li p:last-child {
 footer .SAIYO {
   position: absolute;
   bottom: -4px;
-  font-size: 12.5vw;
+  font-size: calc(100vw/8);
   color: #fff;
   font-family: "Boxing", sans-serif;
   white-space: nowrap;
@@ -649,8 +646,7 @@ footer .SAIYO {
   header .mainvisual {
     display: inline-block;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   header .sub-title {
     display: none;
@@ -663,20 +659,22 @@ footer .SAIYO {
   header .site-title {
     top: 260%;
     display: inline-block;
-    font-size: clamp(48px, 48px + 3vw, 9.3333333333vw);
+    font-size: clamp(48px, calc(48px + 3vw), calc((70vw / 7.5)));
   }
   header .text {
-    font-size: 3.3333333333vw;
+    font-size: calc(30vw/9);
     font-weight: 550;
   }
   header .total {
     transform: scale(1.2);
     max-width: 200px;
   }
+
   .column .site-title {
     font-size: 24px;
     top: 200%;
   }
+
   main {
     margin-top: 112px;
   }
@@ -685,7 +683,7 @@ footer .SAIYO {
   }
   main #LP .sec-title {
     display: block;
-    font-size: clamp(20px, 11vw, 48px);
+    font-size: clamp(20px, calc(88vw/8), 48px);
   }
   main #LP .text {
     display: block;
@@ -709,7 +707,7 @@ footer .SAIYO {
     padding-bottom: 4px;
   }
   main #LP .grid .flex .favorite-count,
-  main #LP .grid .flex .number {
+main #LP .grid .flex .number {
     font-size: 16px;
   }
   main #LP .grid .content {
@@ -742,7 +740,7 @@ footer .SAIYO {
     margin-top: 32px;
   }
   main #contact .sec-title {
-    font-size: clamp(24px, 12.5714285714vw, 48px);
+    font-size: clamp(24px, calc(88vw/7), 48px);
   }
   main #article {
     margin-top: 360px;
@@ -796,6 +794,7 @@ footer .SAIYO {
   main #column-list img {
     height: 250px;
   }
+
   footer .grid {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
@@ -803,6 +802,7 @@ footer .SAIYO {
   footer::before {
     width: 88%;
   }
+
   .container {
     padding-inline: 6%;
   }
@@ -816,7 +816,7 @@ footer .SAIYO {
     font-size: 8px;
   }
   header .text {
-    font-size: 3.3333333333vw;
+    font-size: calc(30vw/9);
     font-weight: 550;
     margin-left: -8px;
   }
@@ -831,6 +831,7 @@ footer .SAIYO {
     font-size: 8px;
     top: 80vw;
   }
+
   main {
     margin-top: 64px;
   }
@@ -861,11 +862,13 @@ footer .SAIYO {
   main #column-list img {
     height: 150px;
   }
+
   footer .grid {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .container {
     padding-inline: 6%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
