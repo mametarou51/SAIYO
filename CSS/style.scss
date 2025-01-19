@@ -19,6 +19,9 @@ $secondary-font-family: 'Yu Gothic', sans-serif;
     img {
         border-radius: 7px;
     }
+
+
+
 }
 
 .container {
@@ -341,16 +344,11 @@ main {
             margin-inline: auto;
             margin-bottom: 32px;
             word-wrap: break-word;
-            /* 単語が長い場合、改行を許可 */
             word-break: break-word;
-            /* 単語の途中で改行可能 */
             line-height: 1.5;
-            /* 行間を設定して可読性を向上 */
             -webkit-hyphens: auto;
             hyphens: auto;
-            /* 自動ハイフネーション（単語を区切る） */
-            text-align: justify;
-            /* 均等割り付け */
+            text-align: center;
         }
 
         .btn {
@@ -444,6 +442,7 @@ main {
         max-width: 800px;
         margin-inline: auto;
         margin-bottom: 64px;
+        position: relative;
 
         p {
             margin-bottom: 8px;
@@ -490,14 +489,36 @@ main {
             border-radius: 7px;
         }
 
+        .meta {
+            position: absolute;
+            top: 80%;
+            left: 1%;
+            font-size: $base-font-size;
+            font-family: $secondary-font-family;
+        }
+
         .detail {
             font-size: $base-font-size;
             font-family: $secondary-font-family;
         }
+
+        .tag {
+            font-size: 16px;
+            font-family: $secondary-font-family;
+            margin-top: 32px;
+            font-weight: 550;
+            display: none;
+
+            p:first-child {
+                margin-left: 16px;
+            }
+        }
+
     }
 
     #related {
         margin-bottom: 128px;
+        position: relative;
 
         p {
             font-family: $secondary-font-family;
@@ -511,7 +532,7 @@ main {
             margin-bottom: 24px;
         }
 
-        .flex {
+        .slick-flex {
             display: flex;
             text-align: left;
             width: 60%;
@@ -538,12 +559,77 @@ main {
                 font-weight: bold;
             }
         }
+
+        .slick-prev,
+        .slick-next {
+            width: 24px;
+            height: 24px;
+            font-weight: 1000;
+            top: -22%;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+
+        .slick-prev {
+            left: 150%;
+            margin-right: 8px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .slick-next {
+            left: 155%;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .slider-info {
+            position: absolute;
+            top: 11%;
+            right: 16%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: $secondary-font-family;
+        }
     }
 
     #column-list {
         padding-bottom: 128px;
         position: relative;
         margin-bottom: 64px;
+
+        .sec-title {
+            font-size: 48px;
+            font-family: $base-font-family;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sub-title {
+            font-size: 12px;
+            font-family: $secondary-font-family;
+            text-align: center;
+            margin-bottom: 16px;
+        }
 
         &::after {
             content: '';
@@ -561,49 +647,51 @@ main {
             row-gap: 24px;
             column-gap: 12px;
 
-            .card {
-                border: 1px solid $secondary-color;
-                border-radius: 7px;
-                padding: 16px;
-                text-align: right;
 
-                &:nth-child(3n+2) {
-                    background-color: #282828;
-                    color: $main-color;
+        }
 
-                    .text {
-                        color: $main-color;
-                    }
+        .card {
+            border: 1px solid $secondary-color;
+            border-radius: 7px;
+            padding: 16px;
+            text-align: right;
 
-                    .btn {
-                        border: 1px solid $main-color;
-                    }
-                }
-
-                img {
-                    width: 100%;
-                    height: 150px;
-                    border-radius: 0;
-                }
+            &:nth-child(3n+2) {
+                background-color: #282828;
+                color: $main-color;
 
                 .text {
-                    font-weight: bold;
-                    padding-top: 16px;
-                    padding-left: 8px;
-                    font-family: $secondary-font-family;
-                    margin-bottom: 80px;
-                    text-align: left;
+                    color: $main-color;
                 }
 
                 .btn {
-                    text-align: right;
-                    font-weight: bold;
-                    border: 1px solid $secondary-color;
-                    border-radius: 50%;
-                    padding: 8px;
+                    border: 1px solid $main-color;
                 }
             }
 
+
+            .text {
+                font-weight: bold;
+                padding-top: 16px;
+                padding-left: 8px;
+                font-family: $secondary-font-family;
+                margin-bottom: 80px;
+                text-align: left;
+            }
+
+            .btn {
+                text-align: right;
+                font-weight: bold;
+                border: 1px solid $secondary-color;
+                border-radius: 50%;
+                padding: 8px;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 150px;
+            border-radius: 0;
         }
     }
 }
@@ -617,6 +705,7 @@ footer {
     margin-bottom: 128px;
     padding-inline: 4%;
     padding-top: 16px;
+    padding-bottom: 64px;
     border-radius: 5px;
 
     &::before {
@@ -663,10 +752,14 @@ footer {
         }
     }
 
-    p:last-child {
-        font-size: calc(100vw/7);
+    .SAIYO {
+        position: absolute;
+        bottom: -4px;
+        font-size: calc(100vw/8);
         color: #fff;
         font-family: $base-font-family;
+        white-space: nowrap;
+        margin-top: -8px;
     }
 }
 
@@ -679,6 +772,10 @@ footer {
             display: inline-block;
             width: 100%;
             object-fit: cover;
+        }
+
+        .sub-title {
+            display: none;
         }
 
         .side {
@@ -701,6 +798,13 @@ footer {
         .total {
             transform: scale(1.2);
             max-width: 200px;
+        }
+    }
+
+    .column {
+        .site-title {
+            font-size: 24px;
+            top: 200%;
         }
     }
 
@@ -804,13 +908,53 @@ footer {
 
         #article {
             margin-top: 360px;
+
             img {
                 border-radius: 24px;
             }
+
             .text {
                 flex-direction: column;
                 font-size: 16px;
                 margin-bottom: 64px;
+            }
+
+            .meta {
+                display: none;
+            }
+
+            .detail {
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            .tag {
+                display: inline-block;
+            }
+        }
+
+        #related {
+            p:first-child {
+                font-weight: 550;
+            }
+
+            .slider-info {
+                display: none;
+            }
+
+            .slick-flex {
+                width: 100%;
+            }
+        }
+
+        #column-list {
+            margin-top: 120px;
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            img {
+                height: 200px;
             }
         }
     }
@@ -824,6 +968,7 @@ footer {
         &::before {
             width: 88%;
         }
+
     }
 
     .container {
@@ -857,7 +1002,7 @@ footer {
         }
 
         .side {
-            font-size: 10px;
+            font-size: 8px;
             top: 80vw;
         }
     }
@@ -897,6 +1042,10 @@ footer {
             .btn {
                 font-size: 12px;
             }
+        }
+
+        #article {
+            margin-top: 232px;
         }
     }
 

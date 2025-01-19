@@ -40,12 +40,33 @@
                 <p>Text <span>サイヨー編集部</span></p>
             </div>
             <img src="./img/grey.jpg" alt="">
+            <p class="meta">
+                <a href="index.html">Top</a>
+                <span>-</span>
+                <a href="column-list.html" title="Column List">Column</a>
+                <span>-</span>
+                <a href="single-column.html" title="Single Column">サイヨー編集部が選ぶ××××××</a>
+            </p>
             <p class="detail">テキストテキストテキストテキストテキストテキスト</p>
+            <div class="tag">
+                <p>TAG</p>
+                <p class="sub-title">WEBサイト</p>
+            </div>
         </section>
         <section id="related" class="container">
             <p>Related Articles</p>
             <h2 class="sec-title">関連する記事</h2>
-            <ul class="flex">
+            <ul class="slick-flex">
+                <li>
+                    <img src="./img/grey.jpg" alt="">
+                    <p class="date">2024.1212</p>
+                    <p class="text">テキストテキスト</p>
+                </li>
+                <li>
+                    <img src="./img/grey.jpg" alt="">
+                    <p class="date">2024.1212</p>
+                    <p class="text">テキストテキスト</p>
+                </li>
                 <li>
                     <img src="./img/grey.jpg" alt="">
                     <p class="date">2024.1212</p>
@@ -57,15 +78,19 @@
                     <p class="text">テキストテキスト</p>
                 </li>
             </ul>
+            <div class="slider-info">
+                <span class="current-slide">1</span>/<span class="total-slides">2</span>
+            </div>
+            <div class="page-nation"></div>
         </section>
-        <section id="about">
+        <section id="about" class="container">
             <h2 class="sec-title">ABOUT</h2>
             <p class="sub-title">（サイヨーエルピーについて）</p>
             <p class="text">SAIYO LP (サイヨーエルピー) は、 採用ブラン ディング会社POLLOCKが運営する
                 採用ランディングページを紹介する ポータルサイトです。</p>
             <a href="" class="btn">サイヨーエルピーについて → </a>
         </section>
-        <section id="contact">
+        <section id="contact" class="container">
             <p class="sub-title">採用LPを作りたい企業様はこちら</p>
             <h2 class="sec-title">CONTACT</h2>
             <a href="" class="btn">お問い合わせ→</a>
@@ -99,7 +124,7 @@
                 </a>
             </li>
         </ul>
-        <p>SAIYO LP</p>
+        <p class="SAIYO">SAIYO LP</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
