@@ -1,15 +1,14 @@
+@charset "UTF-8";
 * {
   color: #000;
   box-sizing: border-box;
 }
-
-a {
+* a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
 }
-
-img {
+* img {
   border-radius: 7px;
 }
 
@@ -34,19 +33,22 @@ header {
 header .text {
   font-size: 8px;
   font-family: "Yu Gothic", sans-serif;
+  margin-left: -16px;
 }
 header .site-title {
   font-size: calc(48px + 0.5vw);
   font-family: "Boxing", sans-serif;
+  font-weight: bold;
   position: absolute;
   white-space: nowrap;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 header .sub-title {
   font-size: 16px;
   font-family: "Yu Gothic", sans-serif;
+  font-weight: normal;
   display: block;
   text-align: center;
 }
@@ -63,13 +65,14 @@ header .side {
   position: absolute;
   transform: rotate(90deg);
   top: 50vw;
-  left: -10px;
+  left: -2%;
+  right: 91%;
   flex: 1;
   margin-inline: auto;
 }
 
 main {
-  margin-top: 96px;
+  margin-top: 128px;
 }
 main #mainvisual {
   display: none;
@@ -85,11 +88,14 @@ main #LP {
   margin-bottom: 64px;
   padding-bottom: 64px;
   border-bottom: 1px solid #000;
+  text-align: center;
 }
 main #LP .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
+  font-weight: bold;
   display: none;
+  text-align: center;
 }
 main #LP .text {
   font-size: 16px;
@@ -132,11 +138,10 @@ main #LP .grid li:nth-child(8n+5), main #LP .grid li:nth-child(8n+6), main #LP .
 }
 main #LP .flex {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 main #LP .flex .name {
   font-weight: bold;
-  margin-right: 24px;
 }
 main #LP .flex .favorite {
   background-image: url("../img/heart_empty.svg");
@@ -152,10 +157,16 @@ main #LP .flex .favorite.active {
   background-image: url("../img/heart_filled.svg");
 }
 main #LP .flex .favorite-count {
-  font-size: 16px;
+  font-size: 12px;
+  padding-inline: 4px;
 }
 main #LP .flex .number {
-  font-size: 16px;
+  font-size: 12px;
+}
+main #LP .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 main #LP .btn {
   font-size: 16px;
@@ -168,6 +179,7 @@ main #LP .btn {
   cursor: pointer;
   transition: all 0.5s;
   display: none;
+  text-align: center;
 }
 main #LP .btn:hover {
   background-color: #000;
@@ -175,14 +187,15 @@ main #LP .btn:hover {
 }
 main #column {
   text-align: center;
+  display: none;
   padding-bottom: 64px;
-  border-bottom: 1px solid #000;
   margin-bottom: 24px;
 }
 main #column .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
   display: none;
+  font-weight: bold;
   text-align: center;
 }
 main #column .text {
@@ -198,6 +211,7 @@ main #column .slick-card {
   text-align: right;
   display: none;
   margin-inline: 8px;
+  width: 120px;
 }
 main #column .slick-card img {
   width: 100%;
@@ -253,6 +267,7 @@ main #about {
 main #about .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
+  font-weight: bold;
 }
 main #about .sub-title {
   font-family: "Yu Gothic", sans-serif;
@@ -265,6 +280,17 @@ main #about .text {
   max-width: 600px;
   margin-inline: auto;
   margin-bottom: 32px;
+  word-wrap: break-word;
+  /* 単語が長い場合、改行を許可 */
+  word-break: break-word;
+  /* 単語の途中で改行可能 */
+  line-height: 1.5;
+  /* 行間を設定して可読性を向上 */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  /* 自動ハイフネーション（単語を区切る） */
+  text-align: justify;
+  /* 均等割り付け */
 }
 main #about .btn {
   font-size: 16px;
@@ -311,6 +337,7 @@ main #contact .sub-title::after {
 main #contact .sec-title {
   font-size: 48px;
   font-family: "Boxing", sans-serif;
+  font-weight: bold;
   position: relative;
   padding-block: 8px;
   max-width: 300px;
@@ -323,6 +350,8 @@ main #contact .sec-title::before {
   height: 1px;
   background-color: #000;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 main #contact .btn {
   font-size: 16px;
@@ -496,9 +525,11 @@ footer {
 footer::before {
   position: absolute;
   content: "";
-  width: 50%;
+  width: 92%;
   height: 1px;
   top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #fff;
 }
 footer .footer-title {
@@ -529,7 +560,7 @@ footer .grid li p:last-child {
   text-align: center;
 }
 footer p:last-child {
-  font-size: 148px;
+  font-size: 14.2857142857vw;
   color: #fff;
   font-family: "Boxing", sans-serif;
 }
@@ -548,11 +579,12 @@ footer p:last-child {
   header .side {
     display: inline-block;
     position: fixed;
+    font-size: 12px;
   }
   header .site-title {
     top: 260%;
     display: inline-block;
-    font-size: calc(48px + 3vw);
+    font-size: clamp(48px, 48px + 3vw, 9.3333333333vw);
   }
   header .text {
     font-size: 3.3333333333vw;
@@ -570,6 +602,7 @@ footer p:last-child {
   }
   main #LP .sec-title {
     display: block;
+    font-size: clamp(20px, 11vw, 48px);
   }
   main #LP .text {
     display: block;
@@ -577,8 +610,36 @@ footer p:last-child {
   main #LP .grid {
     grid-template-columns: repeat(1, 1fr);
   }
+  main #LP .grid li:nth-child(8n), main #LP .grid li:nth-child(8n+1), main #LP .grid li:nth-child(8n+3), main #LP .grid li:nth-child(8n+6) {
+    height: 300px;
+  }
+  main #LP .grid li:nth-child(8n+2), main #LP .grid li:nth-child(8n+4), main #LP .grid li:nth-child(8n+5), main #LP .grid li:nth-child(8n+7) {
+    height: 380px;
+  }
+  main #LP .grid .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  main #LP .grid .flex .name {
+    margin-top: 12px;
+    font-size: 24px;
+    padding-bottom: 4px;
+  }
+  main #LP .grid .flex .favorite-count,
+  main #LP .grid .flex .number {
+    font-size: 16px;
+  }
+  main #LP .grid .content {
+    justify-content: center;
+    margin-bottom: 24px;
+  }
   main #LP .btn {
-    display: none;
+    display: inline-block;
+    margin-top: 32px;
+  }
+  main #column {
+    border-bottom: 1px solid #000;
+    display: block;
   }
   main #column .sec-title {
     display: block;
@@ -595,10 +656,28 @@ footer p:last-child {
   }
   main #column .btn {
     display: inline-block;
+    margin-top: 32px;
+  }
+  main #contact .sec-title {
+    font-size: clamp(24px, 12.5714285714vw, 48px);
+  }
+  main #article {
+    margin-top: 360px;
+  }
+  main #article img {
+    border-radius: 24px;
+  }
+  main #article .text {
+    flex-direction: column;
+    font-size: 16px;
+    margin-bottom: 64px;
   }
   footer .grid {
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
+  }
+  footer::before {
+    width: 88%;
   }
   .container {
     padding-inline: 6%;
@@ -615,6 +694,7 @@ footer p:last-child {
   header .text {
     font-size: 3.3333333333vw;
     font-weight: 550;
+    margin-left: -8px;
   }
   header .total {
     transform: scale(0.8);
@@ -643,6 +723,12 @@ footer p:last-child {
     font-size: 8px;
   }
   main #about .sub-title {
+    font-size: 12px;
+  }
+  main #about .text {
+    font-size: 12px;
+  }
+  main #about .btn {
     font-size: 12px;
   }
   footer .grid {

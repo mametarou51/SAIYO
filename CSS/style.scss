@@ -9,16 +9,16 @@ $secondary-font-family: 'Yu Gothic', sans-serif;
 * {
     color: $secondary-color;
     box-sizing: border-box;
-}
 
-a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+    }
 
-img {
-    border-radius: 7px;
+    img {
+        border-radius: 7px;
+    }
 }
 
 .container {
@@ -42,14 +42,16 @@ header {
     .text {
         font-size: $secondary-font-size;
         font-family: $secondary-font-family;
+        margin-left: -16px;
     }
 
     .site-title {
         font-size: calc(48px + 0.5vw);
         font-family: $base-font-family;
+        font-weight: bold;
         position: absolute;
         white-space: nowrap;
-        top: 50%;
+        top: 100%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -57,6 +59,7 @@ header {
     .sub-title {
         font-size: $base-font-size;
         font-family: $secondary-font-family;
+        font-weight: normal;
         display: block;
         text-align: center;
     }
@@ -75,19 +78,21 @@ header {
         position: absolute;
         transform: rotate(90deg);
         top: calc(100vw/2);
-        left: -10px;
+        left: -2%;
+        right: 91%;
         flex: 1;
         margin-inline: auto;
-        }
+    }
 }
 
 main {
-    margin-top: 96px;
+    margin-top: 128px;
 
     #mainvisual {
         display: none;
         margin-bottom: 64px;
         text-align: center;
+
         img {
             border-radius: 5%;
             width: 100%;
@@ -99,11 +104,14 @@ main {
         margin-bottom: 64px;
         padding-bottom: 64px;
         border-bottom: 1px solid $secondary-color;
+        text-align: center;
 
         .sec-title {
             font-size: 48px;
             font-family: $base-font-family;
+            font-weight: bold;
             display: none;
+            text-align: center;
         }
 
         .text {
@@ -167,11 +175,10 @@ main {
 
         .flex {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
 
             .name {
                 font-weight: bold;
-                margin-right: 24px;
             }
 
             .favorite {
@@ -190,12 +197,19 @@ main {
             }
 
             .favorite-count {
-                font-size: $base-font-size;
+                font-size: 12px;
+                padding-inline: 4px;
             }
 
             .number {
-                font-size: $base-font-size;
+                font-size: 12px;
             }
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .btn {
@@ -209,6 +223,7 @@ main {
             cursor: pointer;
             transition: all 0.5s;
             display: none;
+            text-align: center;
 
             &:hover {
                 background-color: $secondary-color;
@@ -219,14 +234,15 @@ main {
 
     #column {
         text-align: center;
+        display: none;
         padding-bottom: 64px;
-        border-bottom: 1px solid $secondary-color;
         margin-bottom: 24px;
 
         .sec-title {
             font-size: 48px;
             font-family: $base-font-family;
             display: none;
+            font-weight: bold;
             text-align: center;
         }
 
@@ -244,6 +260,7 @@ main {
             text-align: right;
             display: none;
             margin-inline: 8px;
+            width: 120px;
 
             img {
                 width: 100%;
@@ -291,6 +308,7 @@ main {
                 color: $main-color;
             }
         }
+
         .sub-title {
             font-size: $secondary-font-size;
             font-family: $secondary-font-family;
@@ -307,6 +325,7 @@ main {
         .sec-title {
             font-size: 48px;
             font-family: $base-font-family;
+            font-weight: bold;
         }
 
         .sub-title {
@@ -321,6 +340,17 @@ main {
             max-width: 600px;
             margin-inline: auto;
             margin-bottom: 32px;
+            word-wrap: break-word;
+            /* 単語が長い場合、改行を許可 */
+            word-break: break-word;
+            /* 単語の途中で改行可能 */
+            line-height: 1.5;
+            /* 行間を設定して可読性を向上 */
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            /* 自動ハイフネーション（単語を区切る） */
+            text-align: justify;
+            /* 均等割り付け */
         }
 
         .btn {
@@ -373,6 +403,7 @@ main {
         .sec-title {
             font-size: 48px;
             font-family: $base-font-family;
+            font-weight: bold;
             position: relative;
             padding-block: 8px;
             max-width: 300px;
@@ -385,6 +416,8 @@ main {
                 height: 1px;
                 background-color: #000;
                 bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
@@ -589,9 +622,11 @@ footer {
     &::before {
         position: absolute;
         content: "";
-        width: 50%;
+        width: 92%;
         height: 1px;
         top: 8%;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: #fff;
     }
 
@@ -629,7 +664,7 @@ footer {
     }
 
     p:last-child {
-        font-size: 148px;
+        font-size: calc(100vw/7);
         color: #fff;
         font-family: $base-font-family;
     }
@@ -639,6 +674,7 @@ footer {
     header {
         position: relative;
         padding-inline: 6%;
+
         .mainvisual {
             display: inline-block;
             width: 100%;
@@ -648,12 +684,13 @@ footer {
         .side {
             display: inline-block;
             position: fixed;
+            font-size: 12px;
         }
 
         .site-title {
             top: 260%;
             display: inline-block;
-            font-size: calc(48px + 3vw);
+            font-size: clamp(48px, calc(48px + 3vw), calc((70vw / 7.5)));
         }
 
         .text {
@@ -669,12 +706,15 @@ footer {
 
     main {
         margin-top: 112px;
+
         #mainvisual {
             display: block;
         }
+
         #LP {
             .sec-title {
                 display: block;
+                font-size: clamp(20px, calc(88vw/8), 48px);
             }
 
             .text {
@@ -683,14 +723,56 @@ footer {
 
             .grid {
                 grid-template-columns: repeat(1, 1fr);
+
+                li {
+
+                    &:nth-child(8n),
+                    &:nth-child(8n+1),
+                    &:nth-child(8n+3),
+                    &:nth-child(8n+6) {
+                        height: 300px;
+                    }
+
+                    &:nth-child(8n+2),
+                    &:nth-child(8n+4),
+                    &:nth-child(8n+5),
+                    &:nth-child(8n+7) {
+                        height: 380px;
+                    }
+                }
+
+                .flex {
+                    flex-direction: column;
+                    text-align: center;
+
+                    .name {
+                        margin-top: 12px;
+                        font-size: 24px;
+                        padding-bottom: 4px;
+                    }
+
+                    .favorite-count,
+                    .number {
+                        font-size: 16px;
+                    }
+                }
+
+                .content {
+                    justify-content: center;
+                    margin-bottom: 24px;
+                }
             }
 
             .btn {
-                display: none;
+                display: inline-block;
+                margin-top: 32px;
             }
         }
 
         #column {
+            border-bottom: 1px solid $secondary-color;
+            display: block;
+
             .sec-title {
                 display: block;
             }
@@ -702,6 +784,7 @@ footer {
             .slick-card {
                 display: block;
                 border: 1.5px solid $secondary-color;
+
                 .text {
                     margin-bottom: 16px;
                 }
@@ -709,6 +792,25 @@ footer {
 
             .btn {
                 display: inline-block;
+                margin-top: 32px;
+            }
+        }
+
+        #contact {
+            .sec-title {
+                font-size: clamp(24px, calc(88vw/7), 48px);
+            }
+        }
+
+        #article {
+            margin-top: 360px;
+            img {
+                border-radius: 24px;
+            }
+            .text {
+                flex-direction: column;
+                font-size: 16px;
+                margin-bottom: 64px;
             }
         }
     }
@@ -717,6 +819,10 @@ footer {
         .grid {
             width: 100%;
             grid-template-columns: repeat(1, 1fr);
+        }
+
+        &::before {
+            width: 88%;
         }
     }
 
@@ -739,6 +845,7 @@ footer {
         .text {
             font-size: calc(30vw/9);
             font-weight: 550;
+            margin-left: -8px;
         }
 
         .total {
@@ -757,24 +864,37 @@ footer {
 
     main {
         margin-top: 64px;
+
         #LP {
             .sec-title {
                 font-size: calc(32px + 1vw);
             }
+
             .text {
                 font-size: 8px;
             }
         }
+
         #column {
             .sec-title {
                 font-size: calc(32px + 1vw);
             }
+
             .sub-title {
                 font-size: 8px;
             }
         }
+
         #about {
             .sub-title {
+                font-size: 12px;
+            }
+
+            .text {
+                font-size: 12px;
+            }
+
+            .btn {
                 font-size: 12px;
             }
         }
@@ -790,5 +910,5 @@ footer {
     .container {
         padding-inline: 6%;
     }
-    
+
 }
